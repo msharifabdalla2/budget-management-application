@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-This repository contains the **Budget Management Application**.
+This repository contains a Budget Management Application that allows users to track income, expenses, and savings, helping them manage their finances effectively.
 
 ## Development Tools & Configuration
 
