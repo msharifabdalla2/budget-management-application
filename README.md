@@ -4,16 +4,14 @@
 
 This repository contains the **Budget Management Application**.
 
----
-
 ## Development Tools & Configuration
 
-| Tool             | Version | Purpose |
-|------------------|---------|---------|
-| **OpenJDK**      | 25      | Core language for building the application. |
-| **IntelliJ IDEA** | 2025.2.3 | IDE for efficient coding, debugging, and project management. |
-| **Git**          | 2.51    | Version control for tracking changes and managing branches. |
-| **GitHub**       | 3.17.6  | Cloud repository for collaboration and remote backup. |
+| Tool               | Version | Purpose |
+|--------------------|---------|---------|
+| **OpenJDK (Java)** | 25      | Core language for building the application. |
+| **IntelliJ IDEA**  | 2025.2.3 | IDE for efficient coding, debugging, and project management. |
+| **Git**            | 2.51    | Version control for tracking changes and managing branches. |
+| **GitHub**         | 3.17.6  | Cloud repository for collaboration and remote backup. |
 
 ### Setup Steps
 
