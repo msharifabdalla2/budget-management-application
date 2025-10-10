@@ -27,6 +27,7 @@ public class BankAccount {
     public void withdraw(double amount) {
         if (amount <= 0) {
             System.out.println("Amount must be positive");
+            return;
         }
         else if (amount > balance) {
             System.out.println("Insufficient balance");

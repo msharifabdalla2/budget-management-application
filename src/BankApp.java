@@ -19,21 +19,14 @@ public class  BankApp {
             int choice = readInt("Choose an option:");
 
             switch (choice) {
-                case 1:
-                    depositFunds(account);
-                    break;
-                case 2:
-                    withdrawFunds(account);
-                    break;
-                case 3:
-                    checkBalance(account);
-                    break;
-                case 4:
+                case 1 -> depositFunds(account);
+                case 2 -> withdrawFunds(account);
+                case 3 -> checkBalance(account);
+                case 4 -> {
                     System.out.println("Thank you for using the bank app. Goodbye!");
                     running = false;
-                    break;
-                default:
-                    System.out.println("Please enter a valid option!");
+                }
+                default -> System.out.println("Please enter a valid option!");
             }
 
             System.out.println( );
