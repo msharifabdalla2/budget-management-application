@@ -7,7 +7,7 @@ public class BudgetManager {
     private static Scanner scanner = new Scanner(System.in);
     private static List<BudgetEntry> entries = new ArrayList<>();
 
-    public static void main(String[] args) {
+    public void run() {
         System.out.println("Welcome to the budget manager");
 
         boolean running = true;
