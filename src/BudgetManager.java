@@ -4,8 +4,8 @@ import java.util.List;
 import java.util.Scanner;
 
 public class BudgetManager {
-    private static Scanner scanner = new Scanner(System.in);
-    private static List<BudgetEntry> entries = new ArrayList<>();
+    private Scanner scanner = new Scanner(System.in);
+    private List<BudgetEntry> entries = new ArrayList<>();
 
     public void run() {
         System.out.println("Welcome to the budget manager");
@@ -31,7 +31,7 @@ public class BudgetManager {
     }
 
     // Budget Manager operations (methods)
-    private static void printMenu() {
+    public static void printMenu() {
         System.out.println("=== Budget Manager ===");
         System.out.println("1) Add Budget Entry");
         System.out.println("2) View All Budget Entries");
@@ -39,7 +39,7 @@ public class BudgetManager {
         System.out.println("4) Exit");
     }
 
-    private static void addEntry() {
+    public void addEntry() {
         System.out.println("Enter category: ");
         String category = scanner.nextLine();
         double amount = readDouble("Enter amount: ");
@@ -55,7 +55,7 @@ public class BudgetManager {
         }
     }
 
-    private static void viewEntries() {
+    public void viewEntries() {
         if (entries.isEmpty()) {
             System.out.println("No entries found!");
             return;
@@ -66,7 +66,7 @@ public class BudgetManager {
         }
     }
 
-    private static void viewTotalBalance() {
+    public void viewTotalBalance() {
         double balance = 0;
         for (BudgetEntry entry : entries) {
             if (entry.getType().equals("income")) {
@@ -78,10 +78,8 @@ public class BudgetManager {
         System.out.println("Your total balance is £" + balance);
     }
 
-
-
     // Helper input methods
-    private static int readInt(String prompt) {
+    public int readInt(String prompt) {
         while (true) {
             System.out.println(prompt);
             try {
@@ -99,7 +97,7 @@ public class BudgetManager {
         }
     }
 
-    private static double readDouble(String prompt) {
+    public double readDouble(String prompt) {
         while (true) {
             System.out.println(prompt);
             try {
