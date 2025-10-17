@@ -7,11 +7,11 @@ public class BudgetEntry {
         if (category == null || category.isBlank()) {
             throw new IllegalArgumentException("Category cannot be blank");
         }
-        this.category = category;
-        this.amount = amount;
         if (type == null || !type.equalsIgnoreCase("Income") && !type.equalsIgnoreCase("Expense")) {
             throw new IllegalArgumentException("Type must be 'Income' or 'Expense'");
         }
+        this.category = category;
+        this.amount = amount;
         this.type = type;
     }
 
