@@ -31,7 +31,7 @@ public class BudgetManager {
     }
 
     // Budget Manager operations (methods)
-    public static void printMenu() {
+    public void printMenu() {
         System.out.println("=== Budget Manager ===");
         System.out.println("1) Add Budget Entry");
         System.out.println("2) View All Budget Entries");
