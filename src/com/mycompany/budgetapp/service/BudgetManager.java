@@ -1,9 +1,13 @@
+package com.mycompany.budgetapp.service;
+
+import com.mycompany.budgetapp.model.BudgetEntry;
+
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
-public class BudgetManager {
+public class BudgetManager implements BudgetService {
     private Scanner scanner = new Scanner(System.in);
     private List<BudgetEntry> entries = new ArrayList<>();
 
@@ -16,7 +20,7 @@ public class BudgetManager {
             int choice = readInt("Choose an option: ");
 
             switch (choice) {
-                case 1 -> addEntry();
+                case 1 -> handleAddEntry();
                 case 2 -> viewEntries();
                 case 3 -> viewTotalBalance();
                 case 4 -> {
@@ -39,7 +43,7 @@ public class BudgetManager {
         System.out.println("4) Exit");
     }
 
-    public void addEntry() {
+    public void handleAddEntry() {
         System.out.println("Enter category: ");
         String category = scanner.nextLine();
         double amount = readDouble("Enter amount: ");
@@ -48,11 +52,29 @@ public class BudgetManager {
 
         try {
             BudgetEntry entry = new BudgetEntry(category, amount, type);
-            entries.add(entry);
+            addEntry(entry);
             System.out.println("Entry added successfully!");
         } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
         }
+    }
+
+    @Override
+    public void addEntry(BudgetEntry entry) {
+        entries.add(entry);
+    }
+
+    @Override
+    public double getTotalBalance() {
+        double balance = 0;
+        for  (BudgetEntry entry : entries) {
+            if (entry.getType().equalsIgnoreCase("income")) {
+                balance += entry.getAmount();
+            } else {
+                balance -= entry.getAmount();
+            }
+        }
+        return balance;
     }
 
     public void viewEntries() {
@@ -67,15 +89,7 @@ public class BudgetManager {
     }
 
     public void viewTotalBalance() {
-        double balance = 0;
-        for (BudgetEntry entry : entries) {
-            if (entry.getType().equals("income")) {
-                balance += entry.getAmount();
-            } else {
-                balance -= entry.getAmount();
-            }
-        }
-        System.out.println("Your total balance is £" + balance);
+        System.out.println("Your total balance is £" + getTotalBalance());
     }
 
     // Helper input methods
