@@ -1,3 +1,5 @@
+package com.mycompany.budgetapp.model;
+
 public class BudgetEntry {
     private String category; // e.g. "Food", "Transport", "Salary"
     private double amount;
