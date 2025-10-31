@@ -7,4 +7,6 @@ import java.util.List;
 public interface BudgetService {
     void addEntry(BudgetEntry entry);
     double getTotalBalance();
+    List<BudgetEntry> getAllEntriesSortedByAmount();
+    void searchByEntryType(String category);
 }

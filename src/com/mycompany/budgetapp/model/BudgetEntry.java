@@ -1,6 +1,6 @@
 package com.mycompany.budgetapp.model;
 
-public class BudgetEntry {
+public class BudgetEntry implements Comparable<BudgetEntry> {
     private String category; // e.g. "Food", "Transport", "Salary"
     private double amount;
     private String type; // "Income" or "Expense"
@@ -50,5 +50,10 @@ public class BudgetEntry {
             throw new IllegalArgumentException("Type must be 'Income' or 'Expense");
         }
         this.type = type;
+    }
+
+    @Override
+    public int compareTo(BudgetEntry budgetEntry) {
+        return Double.compare(this.amount, budgetEntry.amount);
     }
 }
