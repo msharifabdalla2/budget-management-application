@@ -9,4 +9,6 @@ public interface BudgetService {
     double getTotalBalance();
     List<BudgetEntry> getAllEntriesSortedByAmount();
     void searchByEntryType(String category);
+    List<BudgetEntry> searchByEntryTypeReturn(String entryType);
+
 }

@@ -12,6 +12,9 @@ public class BudgetEntry implements Comparable<BudgetEntry> {
         if (type == null || !type.equalsIgnoreCase("Income") && !type.equalsIgnoreCase("Expense")) {
             throw new IllegalArgumentException("Type must be 'Income' or 'Expense'");
         }
+        if (amount <= 0) {
+            throw new IllegalArgumentException("Amount cannot be less than zero");
+        }
         this.category = category;
         this.amount = amount;
         this.type = type;
