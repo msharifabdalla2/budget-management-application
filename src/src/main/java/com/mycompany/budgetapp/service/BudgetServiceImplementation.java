@@ -41,4 +41,15 @@ public class BudgetServiceImplementation implements BudgetService {
                 .filter(entry -> entry.getType().equalsIgnoreCase(entryType))
                 .forEach(entry -> System.out.println("Category: " + entry.getCategory() + ", Amount: " + entry.getAmount() + ", Type: " + entry.getType()));
         }
+
+    @Override
+    public List<BudgetEntry> searchByEntryTypeReturn(String entryType) {
+        List<BudgetEntry> result = new ArrayList<>();
+        for (BudgetEntry entry : entries) {
+            if (entry.getType().equalsIgnoreCase(entryType)) {
+                result.add(entry);
+            }
+        }
+        return result;
     }
+}
